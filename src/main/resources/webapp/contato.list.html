@@ -1,0 +1,18 @@
+<a href="#/criar" class="btn btn-primary">Novo Contato</a>
+<hr />
+<table class="table striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% _.each(models, function(model) { %>
+        <tr>
+            <td><%= htmlEncode(model.get('nome')) %></td>
+            <td><a class="btn" href="#/alterar/<%= model.id %>">Alterar</a></td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>

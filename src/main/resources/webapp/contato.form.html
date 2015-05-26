@@ -1,0 +1,15 @@
+<form name="formModel" class="model-form">
+    <legend><%= model ? 'Alterando' : 'Criando' %> model</legend>
+    <div class="control-group nome">
+        <label>Nome</label>
+        <input name="nome" placeholder="Digite o nome do contato" type="text" value="<%= model ? model.get('nome') : '' %>">
+        <span class="help-inline"></span>
+    </div>
+    <hr />
+    <button type="submit" class="btn"><%= model ? 'Alterar' : 'Criar' %></button>
+    <% if(model) { %>
+    <input type="hidden" name="id" value="<%= model.id %>" />
+    <button data-model-id="<%= model.id %>" class="btn btn-danger delete">Delete</button>
+    <% }; %>
+    <a href="#" class="btn btn-info">Voltar</a>
+</form>

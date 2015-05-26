@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Backbone + Spark</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="dependencies/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>Contatos</h1>
+            <hr />
+            <div class="page"></div>
+        </div>
+
+        <script src="dependencies/js/jquery.js"></script>
+        <script src="dependencies/js/underscore.js"></script>
+        <script src="dependencies/js/backbone.js"></script>
+        <script type="text/javascript">
+            var url = '/contato';
+            var defaults = {
+            };
+            var model_list_template = "contato.list.html";
+            var model_form_template = "contato.form.html";
+            var validate = function (attrs) {
+                var errors = [];
+                if (!attrs.nome) {
+                    errors.push({name: 'nome', message: 'Nome é requerido.'});
+                }
+                return errors.length > 0 ? errors : false;
+            };
+            var onError = function(model, response) {
+                console.log(model);
+                console.log(response);
+                console.log(response.status);
+            };
+        </script>
+        <script src="app/js/crud.js"></script>
+
+    </body>
+</html>
