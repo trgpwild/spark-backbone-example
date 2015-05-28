@@ -101,18 +101,18 @@ $(function () {
             this.$('.help-inline').text('');
         },
         render: function (options) {
-            var that = this;
+            var me = this;
             if (options && options.id) {
-                that.model = new Model({id: options.id});
-                that.model.fetch({
+                me.model = new Model({id: options.id});
+                me.model.fetch({
                     success: function (model) {
                         var template = _.template(model_form_template_content, {model: model});
-                        that.$el.html(template);
+                        me.$el.html(template);
                     }
                 });
             } else {
                 var template = _.template(model_form_template_content, {model: null});
-                that.$el.html(template);
+                me.$el.html(template);
             }
         }
     });
